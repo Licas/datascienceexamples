@@ -1,16 +1,14 @@
 from matplotlib import pyplot as plt
-import numpy as np
 
-payment_method_names = ["Card Swipe", "Cash", "Apple Pay", "Other"]
-payment_method_freqs = [270, 77, 32, 11]
+unit_topics = ['Limits', 'Derivatives', 'Integrals', 'Diff Eq', 'Applications']
+num_hardest_reported = [1, 3, 10, 15, 1]
 
-# Pie Chart with payment methods distribution
-# autopct used to show percentage on pie slices
-plt.pie(payment_method_freqs, labels=payment_method_names, autopct='%0.1f%%')
+fig = plt.figure(figsize=(10,8))
 
-# Needed to make a circle
+plt.pie(num_hardest_reported,labels=unit_topics, autopct="%d%%")
 plt.axis('equal')
-
-plt.legend(payment_method_names)
+plt.title('Hardest Topics')
 
 plt.show()
+
+plt.savefig('my_pie_chart.png')
